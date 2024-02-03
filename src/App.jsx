@@ -23,6 +23,8 @@ const searchLocation = (event) => {
   return (
   
       <div className='app'>
+        <div className='WeatherApp'><h1>Weather App</h1></div>
+
         <div className='search'>
           <input 
           value ={location} 
@@ -38,7 +40,7 @@ const searchLocation = (event) => {
               <p>{data.name}</p>
             </div>
             <div className='temp'>
-              {data.main ? <h1>{data.main.temp}°F</h1> : null}
+              {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
               
             </div>
             <div className='description'>
@@ -50,7 +52,7 @@ const searchLocation = (event) => {
           {data.name != undefined &&
               <div className='bottom'>
               <div className='feels'>
-                {data.main ? <p className='bold'>{data.main.feels_like} °F</p> : null}
+                {data.main ? <p className='bold'>{data.main.feels_like.toFixed()} °F</p> : null}
                
                 <p>Feels Like</p>
               </div>
